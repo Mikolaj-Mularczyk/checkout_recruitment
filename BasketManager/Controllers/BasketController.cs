@@ -14,6 +14,7 @@ namespace BasketManager.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Policy = "ApiUser", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class BasketController : ControllerBase
     {
         private readonly IBasketService basketService;
